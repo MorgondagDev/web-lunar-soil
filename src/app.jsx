@@ -40,6 +40,7 @@ export default class extends React.Component {
 	}
 
 	componentDidMount(){
+		/*
 		fetch('http://static.morgondag.nu/social.json', {
 			method: 'get',
 			headers: {
@@ -58,6 +59,7 @@ export default class extends React.Component {
 		}).catch((ex) => {
 			console.log(ex)
 		})
+		*/
 
 
 		try {
