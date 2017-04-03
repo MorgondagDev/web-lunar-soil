@@ -1,0 +1,25 @@
+[{
+    "type": "Mining",
+    "description": "Mining ores and rare moon minerals is a robust way to earn your keep or to craft more advanced machinery and equipment."
+}, {
+    "type": "Farming",
+    "description": "Botanists can grow and harvest plants, crops, fibers and flowers in well tempered greenhouses for food, medicine, recreation or even profit."
+}, {
+    "type": "Researching",
+    "description": "Setup a lab, identify unknown artifacts, do science for the greater good of your colony and discover new technologies."
+}, {
+    "type": "Crafting",
+    "description": "Create advanced machinery and parts for industrialized farming, clothes, tools, assets to your moonbase or for trading."
+}, {
+    "type": "Trading",
+    "description": "Manipulate the deep space trading to maximize profit. Sell your trade goods and make a profit."
+}, {
+    "type": "Training",
+    "description": "Increase the potential and value of your crew members. Make them into experts."
+}, {
+    "type": "Exploring",
+    "description": "Explore the moon! claim areas of interest, find new resources and opportunities."
+},{
+	"type": "Economics",
+	"description": "Keep your sponsor and your crew happy and contempt, doing their bids can yield you higher rewards."
+}]

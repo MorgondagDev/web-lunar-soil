@@ -3,11 +3,11 @@ const nib = require('nib')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const PORT = process.env.port || 8080
-console.log('http://localhost:' + PORT)
+console.log('http://0.0.0.0:' + PORT)
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:' + PORT,
+        'webpack-dev-server/client?http://0.0.0.0:' + PORT,
         'webpack/hot/only-dev-server',
         './src/index.jsx',
         './src/style.styl'
@@ -19,11 +19,17 @@ module.exports = {
             loader: "eslint-loader"
         }, ],
         loaders: [{
+            test: /\.json$/,
+            loader: 'json'
+        }, {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: "react-hot!babel"
         }, {
-            test: /\.styl?$/,
+            test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: 'url-loader'
+        }, {
+            test: /\.(styl)$/,
             loaders: ['style-loader', 'css-loader', 'stylus-loader']
         }, {
             test: /.*\.(gif|png|jpe?g|svg|ico)$/i,

@@ -1,0 +1,43 @@
+[
+	{
+		"name": "Charlie Sudden",
+		"title": "Scientist",
+		"description":"Ze isn't very humble but no one can research as fast as Charlie!",
+		"video": "sience"
+	},{
+		"name": "Jamie Law",
+		"title": "Builder",
+		"description":"Jamie likes to dance and are a well-educated builder.",
+		"video": "builder"
+	},{
+		"name": "Sam Bell",
+		"title": "Lost Soul",
+		"description":"As the blood on hirs shirt had begin to harden no one knew it's origin. Was it Cannibalism? Nosebleed or clone sickness?",
+		"video": "bell2"
+	},{
+		"name": "Drew Chilli",
+		"title": "Botanist",
+		"description":"Drew loves meetings and beer. Drew will almost certainly know most about chilli plants on your entire moonbase if hired.",
+		"video": "botanist"
+	},{
+		"name": "Riley Crunch",
+		"title": "Expert Botanist",
+		"description":"Riley enjoys the company of flowers more than the company of humanoids! A true botanist indeed!",
+		"video": "farmer"
+	},{
+		"name": "Logan Anderson",
+		"title": "Medic",
+		"description":"Sick or sound? Doesn't matter! Logan cures everything coming hir way.",
+		"video": "medic"
+	},{
+		"name": "Releaxed Mason",
+		"title": "Joker",
+		"description":"Relaxed Mason isn't very good at anything but ze will definitely bring humor to your base.",
+		"video": "slash"
+	},{
+		"name": "Pope Joan",
+		"title": "Spiritualist",
+		"description":"Will Joan bring moral and ethics to your base? Or will he bring debts?",
+		"video": "poped"
+	}
+]

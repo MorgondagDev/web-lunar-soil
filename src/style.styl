@@ -1,13 +1,14 @@
 vendor-prefixes ?= webkit moz ms official
 @import 'nib'
-
 global-reset();
-
 .clear
     clearfix()
 
 *
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 
 input[type="submit"], input[type="button"], button
 	cursor pointer
@@ -15,41 +16,414 @@ input[type="submit"], input[type="button"], button
 html
     padding 0
     margin 0
+
+@font-face {
+    font-family: 'bank_gothicmedium';
+    src: url('bank_gothic_medium-webfont.woff2') format('woff2'), url('bank_gothic_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('OpenSans-Semibold-webfont.woff') format('woff')
+    font-weight: normal;
+    font-style: normal;
+}
+
+html.noscroll
+    overflow hidden
+    height 100%
+    body
+        overflow  hidden
+        height 100%
+
 body
-    padding 100px
+    padding 0
     margin 0
-    background black
-    font-size 18px
-    color white
+    background white
+    font-size 20px
+    color black
     text-align center
-    font-family monospace
+    font-family sans-serif
     text-align left
-    line-height 28px
+    line-height 32px
+    font-family: 'open_sanssemibold';
 p
-    margin 0 20px
+    max-width 800px
+    text-align center
+    display block
+    margin 0 auto
+    font-family: 'open_sanssemibold';
+    word-wrap: break-word;
+
+
+h1,h2,h3,h4,h5
+    font-family: 'bank_gothicmedium';
+    hyphens: none;
+    word-wrap: break-word;
+    max-width 960px
+
 h1
-    font-size 4em
-    margin-bottom 2em
+    font-size: 2.6em;
+    line-height: 1.0em;
+    margin: 1em auto 0.2em auto;
 
     span
         color #444
         font-size 0.5em
 
-a, a:visited, a:hover
-    color #fff
+h2
+    font-size: 1.8em;
+    line-height: 1.0em;
+    margin: 0.6em auto 0.1em auto;
 
-a:hover
+h3
+    font-size: 1.1em;
+    line-height: 1.0em;
+    margin: 0.6em auto 0.1em auto;
+
+a, a:visited, a:hover
+    color black
     text-decoration none
 
+a:hover
+    text-decoration underline
 
-@media (max-width: 720px)
+a h1, a h2, a h3, a em, a p em
+    display inline-block
+
+.video-background
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%
+    height: 100%;
+    z-index: 1;
+
+    video
+        display block
+        width: 100%
+        height: auto;
+
+header
+    background red
+
+.logo {
+    width 300px
+    height auto
+    margin 0px 0 0 0
+    display block
+    position absolute
+    top 10px
+    left 10px
+    z-index 2
+    max-width 100%
+    pointer-events: none;
+}
+
+.description-title
+    font-size: 1.2em;
+    line-height: 1.4em
+
+hr
+    border none
+    background black
+    height 3px
+    text-shadow none
+    margin 0px 250px
+
+.button, .button:visited
+    font-family: 'bank_gothicmedium';
+    text-transform uppercase
+    font-size 32px
+    background black
+    color white
+    padding 8px 12px
+    transition all linear 250ms
+    animation: blinking 2s infinite linear;
+    border solid 2px white
+
+    &:hover
+        background white
+        color black
+        border solid 2px black
+        text-decoration none
+
+@keyframes blinking {
+    0%, 100%{
+       color rgba(0,0,0,1)
+       background white
+    }
+    50% {
+        color rgba(0,0,0,1)
+        background white
+    }
+    80% {
+        color rgba(255,255,255,1)
+        background black
+    }
+}
+
+
+video{
+    margin: 0 auto;
+    display inline-block;
+    max-width: 100%;
+}
+
+section
+    text-align center
+
+article
+    padding 0 1em
+    padding-top: 50px;
+
+em
+    font-style: italic;
+    font-size: 14px;
+    line-height: 25px;
+    display: block;
+    margin: 16px auto 0 auto;
+
+.jobs
+    li
+        width 50%
+        display inline-block
+        vertical-align top
+        height 180px
+        padding 0 60px
+        text-align left
+        max-width 700px
+        p
+            text-align left
+
+.logo-moon {
+    fill: orange;
+    animation: orbit 6s infinite linear, gradient 3.5s infinite ease-in-out;
+    transform-origin: 255.466px 120.42px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(0,0,0,0.4)
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgba(0,0,0,0.4)
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(0,0,0,0.4)
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    rgba(0,0,0,0.4)
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+textarea,
+button:focus {
+    outline: none;
+    resize: none;
+    border: none
+}
+
+
+.crew
+    max-width 1200px
+    margin 0 auto
+    li
+        display inline-block
+        width 300px
+        vertical-align top
+        text-align left
+        margin-bottom 50px
+        input
+            width 200px
+            border none
+            display block
+            font-size 18px
+
+        .description
+            font-size 16px
+            line-height 22px
+            font-weight none
+            padding-right 40px
+            display block
+        p
+            text-align left
+            font-size 16px
+
+@keyframes gradient {
+    0%, 100%{
+        fill: rgb(255, 255, 255);
+    }
+    50% {
+
+        fill: rgb(255, 255, 100);
+    }
+}
+@keyframes orbit {
+    from {
+        transform: rotateZ(0deg)
+    }
+    to {
+        transform: rotateZ(-360deg)
+    }
+}
+
+.register
+    position fixed
+    left 0
+    right 0
+    top 0
+    bottom 0
+    z-index 100
+    background rgba(0,0,0,0.95)
+    color white
+    display none
+    padding 10px 10px 100px 10px
+    border solid 10px black
+    width:100%
+    height:100%
+    overflow-y scroll
+    hr
+        background white
+        margin 20px 20%
+    label
+        width 100px
+        text-align right
+        padding 0 10px 0 0
+        font-size 14px
+        display inline-block
+    input
+        margin 10px auto 10px auto
+        padding 5px
+        border none
+    input[type="submit"]
+        border solid 3px white
+    input[type="checkbox"]
+        display inline
+    a
+        color white
+        display block
+    h1
+        margin-top 0
+    .msg
+        font-size 16px
+        line-height 24px
+        word-wrap: break-word;
+        text-align left
+        font-style italic
+        margin 0 20%
+        color rgba(255,255,255,0.5)
+        b
+            color rgba(255,255,255,1)
+            font-size 18px
+            text-transform capitalize
+        .mail
+            text-transform lowercase
+        p
+            text-align left
+.register.active
+    display block
+
+
+.error
+    background red
+    color black
+    font-size 18px
+    padding 10px
+    display inline-block
+    text-transform uppercase
+
+.close
+    text-transform uppercase
+    text-align right
+
+footer
+    padding-top 100px
+    height 500px
+    font-size 12px
+    text-transform uppercase
+    img
+        display block
+        width 100%
+        height auto;
+
+.morgondag
+    display inline-block
+    max-width 200px
+    margin 40px auto 40px auto
+    opacity 0.5
+    &:hover
+        opacity 1
+
+
+@media (max-width: 1024px)
     body
         font-size 14px
-        padding 20px 10px
-
-    h1
-        margin-bottom 10px
-        font-size 2em
-        line-height 1em
+    h1, h2, h3, h4, h5
+        margin-left 1em
+        margin-right 1em
+    .jobs
+       h1, h2, h3, h4, h5
+           margin-left 0
+           margin-right 0
+    .description-title
+        font-size: 1.6em;
+        line-height: 1.4em;
+    .register .msg
+        margin: 0px 20px;
+@media (max-width: 890px)
     p
-        margin 0px
+        margin: 0 20px;
+    h1, h2, h3, h4, h5
+        margin-top: 20px;
+    hr
+        margin 0 20px
+    .jobs
+        padding 0 30px
+        li
+            height 150px
+            padding 0
+
+@media (max-width: 850px)
+    .jobs
+        padding 0 30px
+        li
+            height 200px
+            padding 0
+    .register h1
+        text-align left
+        padding 0
+        margin 0
+@media (max-width: 660px)
+    .jobs
+        padding 0
+        li
+           display block
+           width 100%
+           height auto
+    .crew li
+        display block
+        width auto
+        margin-bottom 10px
+    .logo
+        width 100px
+.crew li .description
+    padding-right 0px
+@media (max-width: 480px)
+    .jobs p
+        margin 0
+    p
+        line-height: 2em;
+        text-align left
+    h1
+        font-size: 1.4em;
+        line-height 1.2em
+    article
+        padding: 0 1em;
+        padding-top: 10px;
+
