@@ -26,15 +26,12 @@ module.exports = {
             exclude: /node_modules/,
             loader: "react-hot!babel"
         }, {
-            test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            test: /\.(png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: 'url-loader'
         }, {
             test: /\.styl?$/,
             loader: ExtractTextPlugin.extract('css-loader!stylus-loader')
-        }, {
-            test: /.*\.(woff(2)?|eot|ttf)?$/,
-            loader: 'url-loader?limit=100000'
-        }, {
+        },{
             test: /.*\.(gif|png|jpe?g|svg|ico)$/i,
             loaders: [
                 'file?hash=sha512&digest=hex&name=[hash].[ext]',
