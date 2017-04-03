@@ -40,8 +40,8 @@
     "extract-text-webpack-plugin": "1.0.1",
     "image-webpack-loader": "1.8.0",
     "imports-loader": "0.6.5",
-    "json-loader": "^0.5.4",
-    "moment": "^2.17.1",
+    "json-loader": "0.5.4",
+    "moment": "2.17.1",
     "nib": "1.1.0",
     "react": "15.3.2",
     "react-addons-test-utils": "15.3.2",
@@ -53,6 +53,7 @@
     "style-loader": "0.13.0",
     "stylus": "0.54.5",
     "stylus-loader": "2.1.0",
+    "url-loader": "0.5.8",
     "webpack": "1.12.9",
     "webpack-dev-server": "1.14.0"
   }
