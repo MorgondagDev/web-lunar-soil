@@ -29,7 +29,10 @@ export default class extends React.Component {
 		}
 		this.toggleRegister = this.toggleRegister.bind(this);
 		this.closeRegister = this.closeRegister.bind(this)
-		document.addEventListener('keydown', this.closeRegister)
+		if(typeof window != "undefined"){
+			document.addEventListener('keydown', this.closeRegister)
+		}
+
 	}
 
 	closeRegister(e){
@@ -61,18 +64,18 @@ export default class extends React.Component {
 		})
 		*/
 
+		if(typeof window != "undefined"){
+			try {
+				if(window.location.search.indexOf('signup') > -1){
+					this.toggleRegister();
+				}
+			} catch(e){
 
-		try {
-			if(window.location.search.indexOf('signup') > -1){
-				this.toggleRegister();
 			}
-		} catch(e){
 
+			let video = window.document.querySelector('.videoplayer');
+			video.addEventListener('canplaythrough', () => { video.play(); })
 		}
-
-		let video = document.querySelector('.videoplayer');
-		video.addEventListener('canplaythrough', () => { video.play(); })
-
 	}
 
 	renderNews(){
@@ -103,14 +106,17 @@ export default class extends React.Component {
 		if(e){
 			e.preventDefault();
 		}
+		if(typeof window != "undefined"){
+			if(!this.state.register){
+				this.setState({scroll:window.pageYOffset})
+			}
+			this.setState({register: !this.state.register})
 
-		if(!this.state.register){
-			this.setState({scroll:window.pageYOffset})
-		}
-		this.setState({register: !this.state.register})
-		document.querySelector('html').classList.toggle("noscroll")
-		if(this.state.register){
-			window.scrollTo(0, this.state.scroll);
+				document.querySelector('html').classList.toggle("noscroll")
+
+			if(this.state.register){
+				window.scrollTo(0, this.state.scroll);
+			}
 		}
 	}
 
