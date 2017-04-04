@@ -153,6 +153,8 @@ export default class extends React.Component {
 				</article>
 
 				<p><br/></p>
+				<p><br/></p>
+				<p><br/></p>
 				<img src="./lunar-soil_water_room.jpg?1" alt="Lunar Soil - Water Room" title="Lunar Soil - Water Room"/>
     				<br/>
 
@@ -212,6 +214,8 @@ export default class extends React.Component {
 					</ul>
 				</article>
 
+				<p><br/></p>
+				<p><br/></p>
 				<img src="./lunar-soil_character.jpg?1" alt="Lunar Soil - Character" title="Lunar Soil - Character"/>
     				<br/>
 
@@ -220,6 +224,9 @@ export default class extends React.Component {
 					<p>You manage your crew by switching between playing as yourself and as your employees. Crew cooperation is the key to reach your goals. Your crew is the fuel for your organization. Keep them happy and sound to create a good work enviroment. If you ignore their wishes and needs they may get depressed or mad. Remember that you are on a very isolated place where you only have each other...</p>
 				</article>
 
+				<p><br/></p>
+				<p><br/></p>
+				<p><br/></p>
 				<p><br/></p>
 				<img src="./lunar-soil_statue.jpg?1" alt="Lunar Soil - Statue" title="Lunar Soil - Statue"/>
     				<br/>
