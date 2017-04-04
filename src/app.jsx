@@ -152,9 +152,11 @@ export default class extends React.Component {
 					<p>Before beginning managing your moonbase you need to set up a company and pick a sponsor! Choose between a handful of mysterious conglomerates that have been monopolized the supply of space fuel for decades. Each come with its own unique opportunities, requests, threats and ideas.</p>
 				</article>
 
-				<article>
-					<img src="./lunar-soil_water_room.jpg?1" alt="Lunar Soil - Water Room" title="Lunar Soil - Water Room"/>
+				<p><br/></p>
+				<img src="./lunar-soil_water_room.jpg?1" alt="Lunar Soil - Water Room" title="Lunar Soil - Water Room"/>
     				<br/>
+
+				<article>
 					<h1>Working onboard your new Moonbase</h1>
 					<p>A steady income will help you pay your employees salaries, food and trading goods or let you get andvanced machinery. You choose how you want to run your base, as well as staying alive. Here are some basic ways to keep your company busy:</p>
 					<p><br/></p>
@@ -210,16 +212,19 @@ export default class extends React.Component {
 					</ul>
 				</article>
 
-				<article>
-					<img src="./lunar-soil_character.jpg?1" alt="Lunar Soil - Character" title="Lunar Soil - Character"/>
+				<img src="./lunar-soil_character.jpg?1" alt="Lunar Soil - Character" title="Lunar Soil - Character"/>
     				<br/>
+
+				<article>
 					<h1>Crew cooperation</h1>
 					<p>You manage your crew by switching between playing as yourself and as your employees. Crew cooperation is the key to reach your goals. Your crew is the fuel for your organization. Keep them happy and sound to create a good work enviroment. If you ignore their wishes and needs they may get depressed or mad. Remember that you are on a very isolated place where you only have each other...</p>
 				</article>
 
-				<article>
+				<p><br/></p>
 				<img src="./lunar-soil_statue.jpg?1" alt="Lunar Soil - Statue" title="Lunar Soil - Statue"/>
     				<br/>
+
+				<article>
 					<h1>Put on your spacesuit and explore the unkown</h1>
 					<p>Enjoy the rocky landscape, hang out with your coworkers, burn a body, throw someone into a meat grinder or lock them into an airlock. Explore the moon with your spacesuit and make new discoveries.</p>
 					<p><em>* Visiting the outside of your moonbase without your spacesuit will turn you into a corpse within seconds.</em></p>
