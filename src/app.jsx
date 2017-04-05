@@ -188,7 +188,7 @@ export default class extends React.Component {
 
 					<p>Managing, maintaining and recruiting a diverse and effective crew is an important step to a successful moonbase operation.</p>
 					<p>Meet some of the preselected example "experts" available for hire:</p>
-					<p><em>* The sponsor removes itself from any responsibilities regarding the crew, their abilities and consequences of the unlikely event that the consultants may or may not be actual experts at anything, or capable of doing anything or any damage related to the daily work on your moonbase. The experts below might just be fictional characters.</em></p>
+					<p><em>* The sponsor removes itself from any responsibilities regarding the crew, their abilities and consequences of the unlikely event that the employees may or may not be actual experts at anything, or capable of doing anything or any damage related to the daily work on your moonbase. The experts below might just be fictional characters.</em></p>
 					<p><br/></p>
 					<Apply onOpen={()=> this.toggleRegister}/>
 					<p><br/></p>
