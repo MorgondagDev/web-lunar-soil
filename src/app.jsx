@@ -144,7 +144,7 @@ export default class extends React.Component {
 				<p><br/></p>
 				<Apply onOpen={()=> this.toggleRegister}/>
 				<p><br/></p>
-
+				<img src="lunar-soil_the_garden.jpg?1" alt="Lunar Soil - The Garden" title="Lunar Soil - The Garden"/>
 				<hr/>
 
 				<article>
@@ -155,7 +155,7 @@ export default class extends React.Component {
 				<p><br/></p>
 				<p><br/></p>
 				<p><br/></p>
-				<img src="./lunar-soil_water_room.jpg?1" alt="Lunar Soil - Water Room" title="Lunar Soil - Water Room"/>
+				<img src="./lunar-soil_gold.jpg?1" alt="Lunar Soil - Water Room" title="Lunar Soil - Water Room"/>
     				<br/>
 
 				<article>
@@ -216,7 +216,7 @@ export default class extends React.Component {
 
 				<p><br/></p>
 				<p><br/></p>
-				<img src="./lunar-soil_character.jpg?1" alt="Lunar Soil - Character" title="Lunar Soil - Character"/>
+				<img src="./lunar-soil_the_breach.jpg?1" alt="Lunar Soil - Character" title="Lunar Soil - Character"/>
     				<br/>
 
 				<article>
@@ -228,7 +228,7 @@ export default class extends React.Component {
 				<p><br/></p>
 				<p><br/></p>
 				<p><br/></p>
-				<img src="./lunar-soil_statue.jpg?1" alt="Lunar Soil - Statue" title="Lunar Soil - Statue"/>
+				<img src="./lunar-soil-rocket-room.jpg?1" alt="Lunar Soil - The Rocket Room" title="Lunar Soil - The Rocket Room"/>
     				<br/>
 
 				<article>

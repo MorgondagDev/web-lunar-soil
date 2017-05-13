@@ -32,12 +32,19 @@ module.exports = {
             test: /\.styl?$/,
             loader: ExtractTextPlugin.extract('css-loader!stylus-loader')
         },{
-            test: /.*\.(gif|png|jpe?g|svg|ico|eot|ttf|woff|woff2)$/i,
+            test: /.*\.(ico|eot|ttf|woff|woff2)$/i,
             loaders: [
                 'file?hash=sha512&digest=hex&name=[hash].[ext]',
                 'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
             ]
-        }]
+        },
+        {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack-loader?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+        ]
+    }]
     },
     stylus: {
         use: [nib()]
