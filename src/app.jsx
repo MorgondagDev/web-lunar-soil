@@ -221,7 +221,7 @@ export default class extends React.Component {
 
 				<article>
 					<h1>Crew cooperation</h1>
-					<p>You manage your crew and set their schedules. Crew cooperation is the key to reach your goals. Your crew is the fuel for your organization. Keep them happy and sound to create a good work enviroment. If you ignore their wishes and needs they may get depressed or mad. Remember that you are on a very isolated place where you only have each other...</p>
+					<p>You manage your crew and plan their schedules. Crew cooperation is the key to reach your goals. Your crew is the fuel for your organization. Keep them happy and sound to create a good work enviroment. If you ignore their wishes and needs they may get depressed or mad. Remember that you are on a very isolated place where you only have each other...</p>
 				</article>
 
 				<p><br/></p>
