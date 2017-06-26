@@ -67,7 +67,7 @@ export default class extends React.Component {
 		if(typeof window != "undefined"){
 			try {
 				if(window.location.search.indexOf('signup') > -1){
-					this.toggleRegister();
+					//this.toggleRegister();
 				}
 			} catch(e){
 
@@ -133,16 +133,16 @@ export default class extends React.Component {
 				</div>
 				<img className="logo" src="./logo.png" alt="Lunar Soil" title="Lunar Soil"/>
 
-				<p><br/></p>
+				<div className="uppercut-boom">
+					<h1>Your interstellar career is now within reach!</h1>
+					<p>Welcome to Lunar Soil. Your aspiration as a builder, entrepreneur and space explorer has been heard! Pick a sponsor and get ready to claim that rock!</p>
 
-				<h1>Your interstellar career is now within reach!</h1>
-				<p>Welcome to Lunar Soil. Your aspiration as a builder, entrepreneur and space explorer has been heard! Pick a sponsor and get ready to claim that rock!</p>
+					<p><br/></p>
 
-				<p><br/></p>
+					<h2 className="description-title">Lunar Soil is a 3rd person moon-based management game about you, your crew and your corporate sponsorship.</h2>
 
-				<h2 className="description-title">Lunar Soil is a 3rd person moon-based management game about you, your crew and your corporate sponsorship.</h2>
-				<p><br/></p>
-				<Apply onOpen={()=> this.toggleRegister}/>
+					<Register/>
+				</div>
 				<p><br/></p>
 				<img src="lunar-soil_the_garden.jpg?1" alt="Lunar Soil - The Garden" title="Lunar Soil - The Garden"/>
 				<hr/>
@@ -175,7 +175,7 @@ export default class extends React.Component {
 					<p><br/></p>
 
 				</article>
-				<Apply onOpen={()=> this.toggleRegister}/>
+				<Register/>
 
 				<article>
 					<hr/>
@@ -190,7 +190,7 @@ export default class extends React.Component {
 					<p>Meet some of the preselected example "experts" available for hire:</p>
 					<p><em>* The sponsor removes itself from any responsibilities regarding the crew, their abilities and consequences of the unlikely event that the employees may or may not be actual experts at anything, or capable of doing anything or any damage related to the daily work on your moonbase. The experts below might just be fictional characters.</em></p>
 					<p><br/></p>
-					<Apply onOpen={()=> this.toggleRegister}/>
+					<Register/>
 					<p><br/></p>
 					<p><br/></p>
 
@@ -239,10 +239,9 @@ export default class extends React.Component {
 
 				<article>
 					<h1>Apply as a manager today!</h1>
-					<p><br/></p>
-					<Apply onOpen={()=> this.toggleRegister}/>
+					<Register/>
 				</article>
-				<Register visible={this.state.register} toggle={()=> this.toggleRegister} />
+
 				<p><br/></p>
 				<hr/>
 

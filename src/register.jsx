@@ -102,6 +102,18 @@ export default class extends React.Component {
 	}
 
 	render(){
+		return(<section className="signup">
+			<div className="center">
+				<p><br/></p>
+			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
+			        <input type="email" name="email" id="email" placeholder="fantastic@mail.com" />
+			        <br />
+			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
+			        <input type="submit" name="submit" id="submit" className="button" value="Subscribe for updates" />
+			      </form>
+			</div>
+		</section>)
+
 
 		if(this.state.loading){
 			return(

@@ -368,6 +368,89 @@ footer
         opacity 1
 
 
+
+.signup
+    h1
+        animation: hearth 1s linear infinite
+        margin-bottom 10px
+    p.msg
+        font-size 1.2em
+        max-width 700px
+        margin 0 auto 20px auto
+        line-height 1.4em
+    em
+        font-style italic
+        color bc
+    input
+        height 40px
+        padding 10px
+        font-weight bold
+        border solid 2px black
+        margin-top 5px
+        margin-bottom 5px
+        border-radius 2px
+        min-width 240px
+    input[type="submit"]
+        color white
+        font-weight bold
+        background red
+        min-width 160px
+        text-transform uppercase
+        cursor pointer
+        line-height 20px
+        font-size 22px
+        background none;
+        border-radius 0px;
+        padding 10px 0
+
+.uppercut-boom
+    background: white;
+    margin-top: -15%;
+    position: relative;
+    z-index: 9999;
+    border-top: 2px solid black;
+    padding-top: 0px;
+
+    h1
+        margin-top 10px
+@keyframes hearth{
+    0%{
+        color: #7e817c
+    }
+    50%{
+        color: darken(red,50%)
+    }
+    100%{
+        color: #7e817c
+    }
+}
+
+@keyframes pulseBtn{
+    0%{
+        background: #7e817c
+    }
+    25%{
+        background: green
+    }
+    50%{
+        background: black
+    }
+    100%{
+        background: #7e817c
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1024px)
     body
         font-size 14px
@@ -433,3 +516,6 @@ footer
     article
         padding: 0 1em;
         padding-top: 10px;
+    .signup input[type="submit"]
+        font-size 12px
+        min-width 80px
