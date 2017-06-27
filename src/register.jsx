@@ -106,10 +106,19 @@ export default class extends React.Component {
 			<div className="center">
 				<p><br/></p>
 			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
-			        <input type="email" name="email" id="email" placeholder="fantastic@mail.com" />
-			        <br />
-			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
-			        <input type="submit" name="submit" id="submit" className="button" value="Subscribe for updates" />
+				      	<div className="box">
+				      		<div className="inputfield">
+				      		<label htmlFor="name">Name </label>
+				      			<input type="text" name="name" id="name" placeholder="My amazing name" required/>
+				      		</div>
+				      		<div className="inputfield">
+				      			<label htmlFor="email">Email </label>
+				        		<input type="email" name="email" id="email" placeholder="fantastic@mail.com" required />
+				        	</div>
+				        </div>
+			        	<input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
+			        	<input type="hidden" name="ref" defaultValue="web-lunar-soil" />
+			        	<input type="submit" name="submit" id="submit" className="button" value="Sign me up" />
 			      </form>
 			</div>
 		</section>)
