@@ -41,7 +41,6 @@ export default class extends React.Component {
 
 
 	hideSignupForm(){
-		console.log('hide')
 		this.setState({hideSignup: true})
 		if(typeof window != 'undefined'){
 			localStorage.setItem("hidesignup", true)
