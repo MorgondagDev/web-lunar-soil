@@ -25,25 +25,32 @@ export default class extends React.Component {
 			news: false,
 			archive: false,
 			register: false,
-			scroll:0
+			scroll:0,
+			hideSignup: false
 		}
-		this.toggleRegister = this.toggleRegister.bind(this);
-		this.closeRegister = this.closeRegister.bind(this)
+
+		this.hideSignupForm = this.hideSignupForm.bind(this)
+
 		if(typeof window != "undefined"){
+			if(localStorage.getItem("hidesignup")){
+				this.state.hideSignup = true;
+			}
 			document.addEventListener('keydown', this.closeRegister)
 		}
-
 	}
 
-	closeRegister(e){
-		if(e.key == "Escape" && this.state.register){
-			this.toggleRegister();
-			//this.setState({register:false})
+
+	hideSignupForm(){
+		console.log('hide')
+		this.setState({hideSignup: true})
+		if(typeof window != 'undefined'){
+			localStorage.setItem("hidesignup", true)
 		}
 	}
 
+
 	componentDidMount(){
-		/*
+
 		fetch('http://static.morgondag.nu/social.json', {
 			method: 'get',
 			headers: {
@@ -56,23 +63,13 @@ export default class extends React.Component {
 			return res.json()
 		}).then((json) => {
 			this.setState({
-				news: json.news[0],
-				archive: json.news[1]
+				news: json.blog
 			})
 		}).catch((ex) => {
 			console.log(ex)
 		})
-		*/
 
 		if(typeof window != "undefined"){
-			try {
-				if(window.location.search.indexOf('signup') > -1){
-					//this.toggleRegister();
-				}
-			} catch(e){
-
-			}
-
 			let video = window.document.querySelector('.videoplayer');
 			video.addEventListener('canplaythrough', () => { video.play(); })
 		}
@@ -80,50 +77,50 @@ export default class extends React.Component {
 
 	renderNews(){
 		if(this.state.news){
-			return (
-				<div>
-					<a href={this.state.news.url} title={this.state.news.title}><h2>{this.state.news.title}</h2></a>
-					<a href={this.state.news.url} title={this.state.news.title}><p><em>{moment(this.state.news.date).format('MMMM DD, YYYY')}</em></p></a>
-					<p>{this.state.news.description} </p>
-				</div>
+			return(
+				<ul  className="news">
+				{this.state.news.map((item, index)=>{
+					return(
+						<li key={index}>
+							<a href={item.url+'?lui=lunarsoil'} className="title" title={item.title}>
+								<img src={item.img} alt=""/>
+								<div className="meta">
+									<h2>{item.title}</h2>
+									<p>{item.date}</p>
+								</div>
+							</a>
+						</li>
+					)
+				})}
+				<div className="clear"></div>
+				</ul>
 			)
-		}
-	}
-
-	renderArchive(){
-		if(this.state.archive){
-			return (
-				<div>
-					<p><br/></p>
-					<a href={this.state.archive.url}  title={this.state.archive.title}><h3>{moment(this.state.archive.date).format('MMMM DD, YYYY')} - {this.state.archive.title}</h3></a>
-					<p><br/></p><p><br/></p>
-				</div>
-			)
-		}
-	}
-
-	toggleRegister(e){
-		if(e){
-			e.preventDefault();
-		}
-		if(typeof window != "undefined"){
-			if(!this.state.register){
-				this.setState({scroll:window.pageYOffset})
-			}
-			this.setState({register: !this.state.register})
-
-				document.querySelector('html').classList.toggle("noscroll")
-
-			if(this.state.register){
-				window.scrollTo(0, this.state.scroll);
-			}
 		}
 	}
 
 	render(){
 		return(
 			<section>
+				<div className={this.state.hideSignup ? "signupCard hidden": "signupCard"}>
+	  				<form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
+					      	<div className="box">
+					      		<div className="inputfield">
+					      			<p>Free game & news:</p>
+					      		</div>
+					      		<div className="inputfield">
+					      			<input type="text" name="name" id="name" placeholder="Name/Alias" required title="Name/Alias"/>
+					      		</div>
+					      		<div className="inputfield">
+					        		<input type="email" name="email" id="email" placeholder="mail@mail.com" required title="Mail" />
+					        	</div>
+					        	<input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
+					        	<input type="hidden" name="ref" defaultValue="web-lunar-soil" />
+					        	<input type="submit" name="submit" id="submit" className="button" value="Sign up" title="Sign up" />
+					        	 <a href="#" className="close" onClick={this.hideSignupForm}>x</a>
+				        	</div>
+				      </form>
 
+				</div>
 				<div className="video-background">
 					<video className="videoplayer" autoPlay loop muted playsInline poster="./lunar-soil_stairs.jpg?1">
 						<source type="video/mp4" src="./clips/background.mp4?2"/>
@@ -135,12 +132,7 @@ export default class extends React.Component {
 
 				<div className="uppercut-boom">
 					<h1>Your interstellar career is now within reach!</h1>
-					<p>Welcome to Lunar Soil. Your aspiration as a builder, entrepreneur and space explorer has been heard! Pick a sponsor and get ready to claim that rock!</p>
-
-					<p><br/></p>
-
-					<h2 className="description-title">Lunar Soil is a 3rd person moon-based management game about you, your crew and your corporate sponsorship.</h2>
-
+					<h2 className="description-title">Lunar Soil is a 3rd person moon-based management game about you, your AI crew and your corporate sponsorship.</h2>
 					<Register/>
 				</div>
 				<p><br/></p>
@@ -148,8 +140,10 @@ export default class extends React.Component {
 				<hr/>
 
 				<article>
-					<h1>Setting up your new company</h1>
-					<p>Before beginning managing your moonbase you need to set up a company and pick a sponsor! Choose between a handful of mysterious conglomerates that have been monopolized the supply of space fuel for decades. Each come with its own unique opportunities, requests, threats and ideas.</p>
+					<h1>Welcome to Lunar Soil</h1>
+					<p><br/></p>
+					<p> Explore a new world, create, build and manage a moonbase. Trade goods, gear up and go on adventures with your trusted AI crew.</p>
+
 				</article>
 
 				<p><br/></p>
@@ -159,95 +153,28 @@ export default class extends React.Component {
     				<br/>
 
 				<article>
-					<h1>Working onboard your new Moonbase</h1>
-					<p>A steady income will help you pay your employees salaries, food and trading goods or let you get andvanced machinery. You choose how you want to run your base, as well as staying alive. Here are some basic ways to keep your company busy:</p>
+					<h1>Explore a new moon</h1>
+					<p>Explore the calm deadly space with nothing but a spacesuit and a pickaxe.</p>
+					<p>Grab a rover, a small crew and explore the unknown.</p>
 					<p><br/></p>
-					<ul className="jobs">
-						{jobs.map((job, index)=>{
-							return(
-								<li key={index}>
-									<h2>{job.type}</h2>
-									<p>{job.description}</p>
-								</li>
-							)
-						})}
-					</ul>
-					<p><br/></p>
-
 				</article>
 				<Register/>
 
-				<article>
-					<hr/>
-					<h1>Expand and decorate your base</h1>
-					<p>Decorate your base with crafted items or traded goods to feel at home. Expand your base as your company grows.</p>
-				</article>
-
-				<article>
-					<h1>The crew of Lunar Soil</h1>
-
-					<p>Managing, maintaining and recruiting a diverse and effective crew is an important step to a successful moonbase operation.</p>
-					<p>Meet some of the preselected example "experts" available for hire:</p>
-					<p><em>* The sponsor removes itself from any responsibilities regarding the crew, their abilities and consequences of the unlikely event that the employees may or may not be actual experts at anything, or capable of doing anything or any damage related to the daily work on your moonbase. The experts below might just be fictional characters.</em></p>
-					<p><br/></p>
-					<Register/>
-					<p><br/></p>
-					<p><br/></p>
-
-					<ul className="crew">
-						{
-							experts.map((character, index) => {
-								return(
-									<li key={index}>
-										<video width="300"  autoPlay loop muted playsInline>
-											<source src={`./clips/${character.video}.webm`} type="video/webm" />
-											<source src={`./clips/${character.video}.mp4`} type="video/mp4" />
-										</video>
-										<p>{character.name}</p>
-										<p>{character.title}</p>
-										<p></p>
-										<p className="description">{character.description}</p>
-									</li>
-								)
-							})
-						}
-					</ul>
-				</article>
-
-				<p><br/></p>
-				<p><br/></p>
-				<img src="./lunar-soil_the_breach.jpg?1" alt="Lunar Soil - Character" title="Lunar Soil - Character"/>
-    				<br/>
-
-				<article>
-					<h1>Crew cooperation</h1>
-					<p>You manage your crew and plan their schedules. Crew cooperation is the key to reach your goals. Your crew is the fuel for your organization. Keep them happy and sound to create a good work enviroment. If you ignore their wishes and needs they may get depressed or mad. Remember that you are on a very isolated place where you only have each other...</p>
-				</article>
-
-				<p><br/></p>
-				<p><br/></p>
 				<p><br/></p>
 				<p><br/></p>
 				<img src="./lunar-soil-rocket-room.jpg?1" alt="Lunar Soil - The Rocket Room" title="Lunar Soil - The Rocket Room"/>
     				<br/>
 
 				<article>
-					<h1>Put on your spacesuit and explore the unkown</h1>
-					<p>Enjoy the rocky landscape, hang out with your coworkers, burn a body, throw someone into a meat grinder or lock them into an airlock. Explore the moon with your spacesuit and make new discoveries.</p>
-					<p><em>* Visiting the outside of your moonbase without your spacesuit will turn you into a corpse within seconds.</em></p>
-				</article>
-
-				<article>
-					<h1>Apply as a manager today!</h1>
+					<h2>Put on your spacesuit and join us</h2>
 					<Register/>
 				</article>
-
 				<p><br/></p>
 				<hr/>
 
 				<article>
+					<h2>DevLog & news</h2>
 					{this.renderNews()}
-					{/*this.renderArchive()*/}
 				</article>
 
 				<Footer />

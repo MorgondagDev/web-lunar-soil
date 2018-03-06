@@ -416,12 +416,78 @@ footer
     background: white;
     margin-top: -15%;
     position: relative;
-    z-index: 9999;
+    z-index: 2500;
     border-top: 2px solid black;
-    padding-top: 0px;
+    padding-top: 30px;
 
     h1
-        margin-top 10px
+        margin-top 0px
+
+.news
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5px;
+    li
+        border-radius 2px
+        width 50%
+        float left
+
+        height 300px
+        margin 10px auto
+        border solid 1px #bec0bd
+        position relative
+        overflow hidden
+        background #000
+        h2,p
+            position relative
+            z-index 1
+            text-align left
+        img
+            position: absolute;
+            width: 100%;
+            z-index: 0;
+            opacity: 0.6
+
+        .meta
+            bottom 0
+            left 0
+            color #fff
+            position absolute
+            padding 20px
+            font-size 12px
+
+        &:hover
+            img
+                opacity 1
+.signupCard.hidden
+    display none
+
+.signupCard
+    position: absolute;
+    z-index: 5000;
+    color: #fff
+    width: 100%;
+    background rgba(38,74,119,0.92)
+    height: 60px
+    .inputfield input
+        padding: 6px;
+        font-family: 'open_sanssemibold';
+    .inputfield, input[type="submit"]
+        display inline-block
+        height: 32px
+        font-size 18px
+        line-height 30px
+        padding 0 10px
+    .close
+        margin-left 20px
+        width 60px
+        display inline-block
+        text-align center
+        line-height 60px
+        text-decoration none
+
+
+
 @keyframes hearth{
     0%{
         color: #7e817c
@@ -448,15 +514,14 @@ footer
         background: #7e817c
     }
 }
+@media (max-width: 1124px)
 
+    .news li
+        height: 300px;
 
-
-
-
-
-
-
-
+    .news li
+        width 80%
+        float none
 
 
 
@@ -475,6 +540,12 @@ footer
         line-height: 1.4em;
     .register .msg
         margin: 0px 20px;
+
+
+@media (max-width: 960px)
+    .news li
+        height: 200px;
+
 @media (max-width: 890px)
     p
         margin: 0 20px;
@@ -498,6 +569,27 @@ footer
         text-align left
         padding 0
         margin 0
+    .signupCard
+        display none
+@media (max-width: 780px)
+    .news li
+        height: 200px;
+    .news
+        display block
+        text-align: center;
+        margin-bottom 0px;
+        li
+            width 80%
+            max-width 100%
+            margin 0 auto
+            padding 0
+            height: 300px
+    .news li
+        width 100%
+        float none
+    .newss li
+        position relative
+
 @media (max-width: 660px)
     .jobs
         padding 0
@@ -513,6 +605,14 @@ footer
         width 100px
     .crew li .description
         padding-right 0px
+
+@media (max-width: 510px)
+    .news li
+        height 200px
+        margin-bottom: 25px;
+    .news li img
+        opacity: 0.3
+
 @media (max-width: 480px)
     .jobs p
         margin 0
@@ -528,3 +628,8 @@ footer
     .signup input[type="submit"]
         font-size 12px
         min-width 80px
+
+@media (max-width: 375px)
+    .news li
+        height: 175px;
+        width: 100%;

@@ -82,23 +82,6 @@ export default class extends React.Component {
 		}).catch((error)=>{
 			this.setState({loading:false,hasSent:false, hasError:error})
 		})
-
-		// success  f("https://53oasuypu9.execute-api.eu-west-1.amazonaws.com/production/signup", {mail:"hello3@morgondag.nu", company: "yes", name:"gandalf", agree:"yes"})
-		/*
-		setTimeout(()=> {
-			this.setState({loading:false, hasSent:true})
-		}, 5000);
-		*/
-
-
-
-
-		/*
-		setTimeout(()=> {
-			this.setState({loading:false, hasSent:false, hasError:"some shit went down!"})
-		}, 5000);
-
-		*/
 	}
 
 	render(){
@@ -109,129 +92,21 @@ export default class extends React.Component {
 				      	<div className="box">
 				      		<div className="inputfield">
 				      		<label htmlFor="name">Name </label>
-				      			<input type="text" name="name" id="name" placeholder="My amazing name" required/>
+				      			<input type="text" name="name" id="name" placeholder="Name/Alias" required title="Name/Alias"/>
 				      		</div>
 				      		<div className="inputfield">
-				      			<label htmlFor="email">Email </label>
-				        		<input type="email" name="email" id="email" placeholder="fantastic@mail.com" required />
+				      			<label htmlFor="email">Mail </label>
+				        		<input type="email" name="email" id="email" placeholder="mail@mail.com" required title="Mail" />
 				        	</div>
 				        </div>
 			        	<input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
 			        	<input type="hidden" name="ref" defaultValue="web-lunar-soil" />
-			        	<input type="submit" name="submit" id="submit" className="button" value="Sign me up" />
+			        	<p><br/></p>
+			        	<input type="submit" name="submit" id="submit" className="button" value="Sign up" title="Sign up" />
+			        	<em>Right now we are giving away the free game "Spacebase19" to all our subscribers!</em>
+			        	<em> Join now to get free fun stuff, beta invites and information about the development.</em>
 			      </form>
 			</div>
 		</section>)
-
-
-		if(this.state.loading){
-			return(
-				<aside className={`register ${this.props.visible ? "active" : "inactives"}`}>
-	    				<p><br/></p>
-	    				<p><br/></p>
-	    				<h1>Loading....</h1>
-	    				<p>Thanks for your patience...</p>
-	    			</aside>
-			)
-		}
-
-		if(this.state.hasSent){
-			return (
-				<aside className={`register ${this.props.visible ? "active" : "inactives"}`}>
-	    				<a href="./" className="close" onClick={this.props.toggle()}>close</a>
-	    				<p><br/></p>
-	    				<p><br/></p>
-	    				<h1>Thank you for giving us the opportunity to consider you.</h1>
-	    				<p>Thank you very much for your expression of interest.</p>
-	    				<p>Thank you for your application for our advertised position.</p>
-	    				<p><br/></p>
-	    				<input type="submit" value="OK Thanks!" className="button" onClick={this.props.toggle()}/>
-	    			</aside>
-			)
-			return;
-		}
-
-    		return(
-	    		<aside className={`register ${this.props.visible ? "active" : "inactives"}`}>
-	    			<a href="./" className="close" onClick={this.props.toggle()}>close</a>
-	    			{this.state.hasError ? (
-			    				<div className="error">{this.state.hasError}</div>
-			    			) : null}
-	    			<h1>Please register your corporate working information:</h1>
-
-	    			<p>Fill out this TPS-report</p>
-	    			<form action="" onSubmit={this.sendMessage}>
-	    				<p>
-	    					<label htmlFor="">Name: </label>
-	    					<input type="text"  name="name" placeholder="Office guy 1337" onChange={this.handleChange} value={this.state.name}/>
-	    				</p>
-	    				<p>
-	    					<label htmlFor="">Company: </label>
-	    					<input type="text"  name="companyName" placeholder="DiscoBase9" onChange={this.handleChange} value={this.state.companyName}/>
-	    				</p>
-	    				<p>
-	    					<label htmlFor="">Mail: </label>
-	    					<input type="text" required name="mail" placeholder="mail@mail.com" onChange={this.handleChange} value={this.state.mail}/>
-	    				</p>
-
-	    				<p>
-	    					<label htmlFor="">Message: </label>
-	    					<input type="text"  name="message" placeholder="I really like the developers!" onChange={this.handleChange} value={this.state.message}/>
-	    				</p>
-	    				<p>
-	    					<input type="checkbox" name="agree" checked={this.state.agree} onChange={this.handleCheckbox} /> I agree to everything.
-	    				</p>
-	    				<hr/>
-		    				<div className="msg">
-				    			<p>Dear Corporate!</p>
-
-				    			{this.state.name ? (
-				    				<p>My name is <b>{this.state.name}</b> and I am here to apply for the position as moon manager.</p>
-				    			) : null}
-
-				    			<p><br/></p>
-
-				    			{this.state.companyName ? (
-				    				<p>I think this is a brilliant opportunity for all of us and under my leadership I will make sure our new company <b>{this.state.companyName}</b> will succeed.</p>
-				    			) : null}
-
-				    			<p><br/></p>
-
-				    			{this.state.mail ? (
-				    				<p>Please send more information and news about the progress of Lunar Soil to <br/><b className="mail">{this.state.mail}</b>.</p>
-				    			) : (
-				    				<p>I forgot to fill in my mail...</p>
-				    			)}
-
-				    			<p><br/></p>
-
-				    			{this.state.message ? (
-				    				<p>I love the moon! As a last message I would like to say thank you and <b>{this.state.message}</b></p>
-				    			) : null}
-				    			<p><br/></p>
-				    			{this.state.name && this.state.companyName ? (
-				    				<p>Yours sincerely {this.state.name} - {this.state.companyName}</p>
-				    			) : null}
-
-				    			{this.state.agree ? (
-				    				<p><em>P.S! I don't care what you do to me, please send me to the moon!</em></p>
-				    			) : null}
-			    			</div>
-
-			    			{this.state.hasError ? (
-			    				<div className="error">{this.state.hasError}</div>
-			    			) : null}
-			    			<p><br/></p>
-			    			{
-			    				this.state.mail ? (
-			    					<input type="submit" value="submit" className="button"/>
-			    				) : null
-			    			}
-			    			<a href="./" className="close" onClick={this.props.toggle()}>close</a>
-
-
-	    			</form>
-	    		</aside>
-    		)
 	}
   }

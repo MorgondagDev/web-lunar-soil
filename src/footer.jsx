@@ -6,8 +6,8 @@ import Morgondag from './morgondag.jsx'
 export default function(){
     return(
     		<footer>
-    			<img src="./lunar-soil_water_room.jpg?1" alt="Lunar Soil - Gold" title="Lunar Soil - Gold"/>
     			<br/>
+                <a href="http://blog.morgondag.nu/" title="Lunar Soil and Morgondag's Devlog & Blog"> DevLog </a>
     			<a href="https://twitter.com/LunarSoilGame" title="Lunar Soil on Twitter"> Twitter </a>
     			<a href="https://www.facebook.com/LunarSoil/" title="Lunar Soil on Facebook"> Facebook </a>
     			<a href="https://www.instagram.com/morgondag/" title="Lunar Soil on Instagram"> Instagram </a>
