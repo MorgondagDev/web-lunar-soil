@@ -51,7 +51,7 @@ export default class extends React.Component {
 
 	componentDidMount(){
 
-		fetch('http://static.morgondag.nu/social.json', {
+		fetch('https://lunar-soil.com/social.json', {
 			method: 'get',
 			headers: {
 				'Accept': 'application/json',
