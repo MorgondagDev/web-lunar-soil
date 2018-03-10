@@ -154,7 +154,7 @@ export default class extends React.Component {
 				<article>
 					<h1>Explore a new moon</h1>
 					<p>Explore the calm deadly space with nothing but a spacesuit and a pickaxe.</p>
-					<p>Grab a rover, a small crew and explore the unknown.</p>
+					<p>Hire a small crew of experts and explore the unknown.</p>
 					<p><br/></p>
 				</article>
 				<Register/>
