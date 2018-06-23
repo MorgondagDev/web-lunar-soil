@@ -145,9 +145,7 @@ export default class extends React.Component {
 
 				<article>
 					<h1>Explore a new world</h1>
-					<p>Explore the calm deadly space with nothing but a spacesuit and a scrappy starter ship.</p>
-					<p>Become and adventurer and explore the unknown.</p>
-					<p><br/></p>
+					<p>Explore the calm deadly space with nothing but a spacesuit and a scrappy starter ship. Become and adventurer and explore the unknown.</p>
 				</article>
 				<Register/>
 
