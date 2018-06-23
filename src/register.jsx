@@ -88,24 +88,12 @@ export default class extends React.Component {
 		return(<section className="signup">
 			<div className="center">
 				<p><br/></p>
-			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
-				      	<div className="box">
-				      		<div className="inputfield">
-				      		<label htmlFor="name">Name </label>
-				      			<input type="text" name="name" id="name" placeholder="Name/Alias" required title="Name/Alias"/>
-				      		</div>
-				      		<div className="inputfield">
-				      			<label htmlFor="email">Mail </label>
-				        		<input type="email" name="email" id="email" placeholder="mail@mail.com" required title="Mail" />
-				        	</div>
-				        </div>
-			        	<input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
-			        	<input type="hidden" name="ref" defaultValue="web-lunar-soil" />
-			        	<p><br/></p>
-			        	<input type="submit" name="submit" id="submit" className="button" value="Sign up" title="Sign up" />
-			        	<em>Right now we are giving away the free game "Spacebase19" to all our subscribers!</em>
-			        	<em> Join now to get free fun stuff, beta invites and information about the development.</em>
-			      </form>
+				<p>Sign up to get news and updates about Lunar Soil.</p>
+				<p><br/></p>
+				<a href="https://morgondag.io/register?refeerer=lunar-web" title="Register Now">
+			      <input type="submit" name="submit" id="submit" className="button" value="Register Now" title="Register Now" />
+			    </a>
+			    <p><br/></p>
 			</div>
 		</section>)
 	}

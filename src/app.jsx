@@ -32,7 +32,7 @@ export default class extends React.Component {
 		this.hideSignupForm = this.hideSignupForm.bind(this)
 
 		if(typeof window != "undefined"){
-			if(localStorage.getItem("hidesignup")){
+			if(localStorage.getItem("hidesignupr")){
 				this.state.hideSignup = true;
 			}
 			document.addEventListener('keydown', this.closeRegister)
@@ -101,23 +101,15 @@ export default class extends React.Component {
 		return(
 			<section>
 				<div className={this.state.hideSignup ? "signupCard hidden": "signupCard"}>
-	  				<form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
+
 					      	<div className="box">
 					      		<div className="inputfield">
 					      			<p>Free game & news:</p>
 					      		</div>
-					      		<div className="inputfield">
-					      			<input type="text" name="name" id="name" placeholder="Name/Alias" required title="Name/Alias"/>
-					      		</div>
-					      		<div className="inputfield">
-					        		<input type="email" name="email" id="email" placeholder="mail@mail.com" required title="Mail" />
-					        	</div>
-					        	<input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
-					        	<input type="hidden" name="ref" defaultValue="web-lunar-soil" />
-					        	<input type="submit" name="submit" id="submit" className="button" value="Sign up" title="Sign up" />
+					        	<a href="https://morgondag.io/register/" title="Sign up for Lunar Soil"><input type="submit" name="submit" id="submit" className="button" value="Sign up" title="Sign up" /></a>
 					        	 <a href="#" className="close" onClick={this.hideSignupForm}>x</a>
 				        	</div>
-				      </form>
+
 
 				</div>
 				<div className="video-background">
@@ -130,8 +122,8 @@ export default class extends React.Component {
 				<img className="logo" src="./logo.png" alt="Lunar Soil" title="Lunar Soil"/>
 
 				<div className="uppercut-boom">
-					<h1>Your interstellar career is now within reach!</h1>
-					<h2 className="description-title">Lunar Soil is a 3rd person moon-based management game about you, your AI crew and your corporate sponsorship.</h2>
+					<h1>Explore a galaxy filled with adventures.</h1>
+					<h2 className="description-title">Lunar Soil is a 3rd person space adventure game.</h2>
 					<Register/>
 				</div>
 				<p><br/></p>
@@ -141,7 +133,7 @@ export default class extends React.Component {
 				<article>
 					<h1>Welcome to Lunar Soil</h1>
 					<p><br/></p>
-					<p> Explore a new world, create, build and manage a moonbase. Trade goods, gear up and go on adventures with your trusted AI crew.</p>
+					<p> Explore new worlds, discover fantastic wonders. Trade goods, uncover deep stories and quests. Gear up, cash up and survive the harsh universe.</p>
 
 				</article>
 
@@ -152,9 +144,9 @@ export default class extends React.Component {
     				<br/>
 
 				<article>
-					<h1>Explore a new moon</h1>
-					<p>Explore the calm deadly space with nothing but a spacesuit and a pickaxe.</p>
-					<p>Hire a small crew of experts and explore the unknown.</p>
+					<h1>Explore a new world</h1>
+					<p>Explore the calm deadly space with nothing but a spacesuit and a scrappy starter ship.</p>
+					<p>Become and adventurer and explore the unknown.</p>
 					<p><br/></p>
 				</article>
 				<Register/>
@@ -165,7 +157,7 @@ export default class extends React.Component {
     				<br/>
 
 				<article>
-					<h2>Put on your spacesuit and join us</h2>
+					<h2>Put on your spacesuit or die</h2>
 					<Register/>
 				</article>
 				<p><br/></p>
